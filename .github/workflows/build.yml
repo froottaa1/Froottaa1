@@ -18,6 +18,8 @@ jobs:
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
+      with:
+        accept-license: true
 
     - name: Generate Gradle Wrapper and Build
       run: |
