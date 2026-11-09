@@ -17,13 +17,14 @@ jobs:
         java-version: '17'
 
     - name: Setup Android SDK
-      uses: subosito/android-action@v2
+      uses: android-actions/setup-android@v3
       with:
-        api-level: 33
-        build-tools: 33.0.2
         accept-license: true
 
-    - name: Build with Gradle
+    - name: Install Gradle CLI
+      run: sudo apt-get update && sudo apt-get install -y gradle
+
+    - name: Generate Wrapper and Build APK
       run: |
         gradle wrapper --gradle-version 8.5
         chmod +x gradlew
