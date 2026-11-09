@@ -20,10 +20,8 @@ jobs:
       uses: subosito/android-action@v2
       with:
         api-level: 33
-        build-tools: 33.0.2
-        accept-license: true
 
-    - name: Build with Gradle
+    - name: Build APK
       run: |
         gradle wrapper --gradle-version 8.5
         chmod +x gradlew
